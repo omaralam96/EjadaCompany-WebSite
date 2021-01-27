@@ -1,0 +1,95 @@
+﻿@page
+@model EjadaCompany.Pages.EmployeeList.EditModel
+
+<br />
+<h2 class="text-info">Edit Book</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        @*Without the below line, after Fininshing Editing and want to submit will result in error
+        because you haven't added the ID, But ID is the Primary key which is auto Incremented and can't be edited by user,
+        So Include it in form But Make it Hidden, so that it will be updated Automatically'
+        *@
+        <input type="hidden" asp-for="employee.Id" />
+
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="employee.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="employee.Name"  class="form-control" />
+            </div>
+            <span asp-validation-for="employee.Name" class="text-danger"></span> @*Show inline Messege Validation*@
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="employee.Team"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="employee.Team" class="form-control" />
+            </div>
+            <span asp-validation-for="employee.Team" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="employee.Position"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="employee.Position" class="form-control" />
+            </div>
+            <span asp-validation-for="employee.Position" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="employee.Branch"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="employee.Branch" class="form-control" />
+            </div>
+            <span asp-validation-for="employee.Branch" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="employee.Email"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="employee.Email" class="form-control" />
+            </div>
+            <span asp-validation-for="employee.Email" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="employee.Telphone"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="employee.Telphone" class="form-control" />
+            </div>
+            <span asp-validation-for="employee.Telphone" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="employee.Address"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="employee.Address" class="form-control" />
+            </div>
+            <span asp-validation-for="employee.Address" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Update" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@*Add FrontEnd Validation Checks*@
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

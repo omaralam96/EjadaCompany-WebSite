@@ -1,0 +1,88 @@
+﻿@page
+@model EjadaCompany.Pages.EmployeeList.AddNewEmployeeModel
+
+<br />
+<h2 class="text-info">Add New Employee to Database</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Employee.Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Employee.Name" placeholder="Omar Mohamed" class="form-control" />
+            </div>
+            <span asp-validation-for="Employee.Name" class="text-danger"></span>  @*Display That This Section Must Be Filled*@
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Employee.Team"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Employee.Team" placeholder="SharePiont" class="form-control" />
+            </div>
+            <span asp-validation-for="Employee.Team" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Employee.Position"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Employee.Position" placeholder="Junior" class="form-control" />
+            </div>
+            <span asp-validation-for="Employee.Position" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Employee.Branch"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Employee.Branch" placeholder="Cairo" class="form-control" />
+            </div>
+            <span asp-validation-for="Employee.Branch" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Employee.Email"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Employee.Email" placeholder="example@ejada.com" type="email" class="form-control" />
+            </div>
+            <span asp-validation-for="Employee.Email" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Employee.Telphone"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Employee.Telphone" placeholder="01xxxxxxxxx" class="form-control" />
+            </div>
+            <span asp-validation-for="Employee.Telphone" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Employee.Address"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Employee.Address" placeholder="Roxy" class="form-control" />
+            </div>
+            <span asp-validation-for="Employee.Address" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Add New Employee" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@* Add Front End Validation For Section that must be filled *@
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
