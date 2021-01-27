@@ -28,3 +28,20 @@ All Packages have to be of [Version 3.1][df1] , as the used ASP.Net was of [ Cor
 |  Microsoft.EntityFrameworkCore | Object database Mapper |
 |  Microsoft.EntityFrameworkCore.SqlServer | As We Use Sql Server |
 | Microsoft.EntityFrameworkCore.Tools | For Migration to Database |
+
+
+# Note:
+
+Make Sure all packages are installed, and change server name in [appsetting.jason] Match your sql-server name.
+By default the name will be.....(LocalDb)\\MSSQLLocalDB
+so all you need to change the below line
+"ConnectionStrings": {
+    "DefaultConnection": "`${Server=DESKTOP-N7251L9}`;Database=EjadaCompany;Trusted_Connection=True;MultipleActiveResultSets=True"
+  },
+  
+to
+
+"ConnectionStrings": {
+ "DefaultConnection": "Server=(LocalDb)\\\MSSQLLocalDB;Database=EjadaCompany;Trusted_Connection=True;MultipleActiveResultSets=True"
+ },
+ 
